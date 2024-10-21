@@ -1,0 +1,61 @@
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: rgb(19, 30, 182);
+  color: white;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  padding: 0 16px;
+  height: 100%;
+}
+
+.caret::after {
+  content: "";
+  display: inline-block;
+  background-color: rgb(238, 208, 39);
+  margin-left: 4px;
+  animation: blink 0.3s infinite;
+}
+
+.question {
+  font-size: 24px;
+  font-weight: 400;
+}
+.question.caret::after {
+  height: 24px;
+  width: 12px;
+}
+
+.answer {
+  font-size: 18px;
+  font-weight: 200;
+}
+.answer.caret::after {
+  height: 18px;
+  width: 9px;
+}
